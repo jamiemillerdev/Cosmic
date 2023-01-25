@@ -6383,10 +6383,11 @@ public class Character extends AbstractCharacterObject {
         addMaxMPMaxHP(addhp, addmp, true);
 
         if (takeexp) {
-            exp.addAndGet(-ExpTable.getExpNeededForLevel(level));
+            /*exp.addAndGet(-ExpTable.getExpNeededForLevel(level));
             if (exp.get() < 0) {
                 exp.set(0);
-            }
+            }*/
+            exp.set(0);
         }
 
         level++;
