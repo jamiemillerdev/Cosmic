@@ -3009,7 +3009,7 @@ public class Character extends AbstractCharacterObject {
         if ((currentgexp + exp.get()) >= ExpTable.getExpNeededForLevel(level)) {
             expgain += ExpTable.getExpNeededForLevel(level) - exp.get();
 
-            int nextneed = ExpTable.getExpNeededForLevel(level + 1);
+            long nextneed = ExpTable.getExpNeededForLevel(level + 1);
             if (currentgexp - expgain >= nextneed) {
                 expgain += nextneed;
             }
@@ -7580,7 +7580,7 @@ public class Character extends AbstractCharacterObject {
             usedSafetyCharm = true;
         } else if (getJob() != Job.BEGINNER) { //Hmm...
             if (!FieldLimit.NO_EXP_DECREASE.check(getMap().getFieldLimit())) {  // thanks Conrad for noticing missing FieldLimit check
-                int XPdummy = ExpTable.getExpNeededForLevel(getLevel());
+                long XPdummy = ExpTable.getExpNeededForLevel(getLevel());
 
                 if (getMap().isTown()) {    // thanks MindLove, SIayerMonkey, HaItsNotOver for noting players only lose 1% on town maps
                     XPdummy /= 100;
